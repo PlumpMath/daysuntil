@@ -14,9 +14,11 @@ def hello():
     year = request.args.get('year')
     month = request.args.get('month')
     day = request.args.get('day')
+    what = request.args.get('what')
     result = get_days_left(year, month, day)
     return {
-        'days': result
+        'days': result,
+        'what': what
     }
 
 if __name__ == '__main__':

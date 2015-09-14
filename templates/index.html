@@ -1,23 +1,22 @@
 <html>
 <head>
-<title>{{days}} business days until...</title>
+<title>{{days}} business days until {{what}}</title>
 <style>
 body {
   font-family: courier;
   background-color: #a1a1a1;
 }
 p {
-  font-size: 8vw;
+  font-size: 12vw;
 }
-h1 {
-  font-size: 16vw;
+p span {
   font-weight: bold;
+  font-size: 14vw;
   color: #e9ab17;
 }
 </style>
 </head>
 <body>
-<p>business days left</p>
-<h1>{{days}}</h1>
+<p><span>{{days}}</span> business days until <span>{{what}}</span></p>
 </body>
 </html>
