@@ -13,6 +13,6 @@ def get_days_left(year, month, day):
     tree = etree.parse(response, htmlparser)
     result = tree.xpath(xpath)[0]
     days_left = result.split(':')[1].strip().split(' ')[0]
-    return days_left
+    return int(days_left)
 
 
