@@ -6,7 +6,7 @@ url_fmt = 'http://www.timeanddate.com/scripts/dateserver.php?mode=workdays&d1=14
 xpath = '/html/body/div[1]/div/div[1]/h2/text()'
 
 @functools.lru_cache(maxsize=None)
-def get_days_left(year, month, day):
+def get_days_left(cache_key, year, month, day):
     url = url_fmt.format(year=year, month=month, day=day)
     response = urlopen(url)
     htmlparser = etree.HTMLParser()
