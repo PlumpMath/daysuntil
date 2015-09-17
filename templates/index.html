@@ -1,24 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>{{days}} business days until {{what}}</title>
+<title>{{ days }} business days until {{ what }}</title>
 <style>
 body {
   font-family: courier;
-  background-color: #a1a1a1;
+  background-color: {{ bg }};
+  color: {{ fg }};
 }
-p {
-  font-size: 12vw;
-}
-p span {
+div span {
   font-weight: bold;
-  font-size: 14vw;
-  color: #e9ab17;
+  color: {{ highlight }};
+}
+div {
+  font-size: {{ size }}vh;
 }
 </style>
 </head>
 <body>
 {% if what %}
-<p><span>{{days}}</span> business days until <span>{{what}}</span></p>
+<div style="display:flex;justify-content:center;align-items:center;">
+  <div>
+    <span>{{ days }}</span> business days until <span>{{ what }}</span>
+  </div>
+</div>
 {% else %}
 <form action="/" method="GET">
   On date
