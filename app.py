@@ -20,11 +20,14 @@ def hello():
     if not what:
         return {}
     else:
-        cache = dt.date.today().strftime('%Y-%m-%d')
-        result = get_days_left(cache,
-                request.args.get('year'),
-                request.args.get('month'),
-                request.args.get('day'))
+        today = dt.date.today()
+        result = get_days_left(
+                year_start=today.year,
+                month_start=today.month,
+                day_start=today.day,
+                year_end=request.args.get('year'),
+                month_end=request.args.get('month'),
+                day_end=request.args.get('day'))
         dic = {
             'days': result,
             'what': what,
